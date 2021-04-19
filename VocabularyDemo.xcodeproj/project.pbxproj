@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,8 +15,9 @@
 		65AEFE28262B4E09005B6330 /* Vocabulary.h in Headers */ = {isa = PBXBuildFile; fileRef = 65AEFE26262B4E09005B6330 /* Vocabulary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65AEFE2B262B4E0A005B6330 /* Vocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AEFE24262B4E09005B6330 /* Vocabulary.framework */; };
 		65AEFE2C262B4E0A005B6330 /* Vocabulary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65AEFE24262B4E09005B6330 /* Vocabulary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65AEFE32262B4E17005B6330 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE31262B4E17005B6330 /* WordDefinition.swift */; };
-		65AEFE36262B5361005B6330 /* KaoYan_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 65AEFE35262B5361005B6330 /* KaoYan_1.json */; };
+		65AEFE38262CEB42005B6330 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 65AEFE37262CEB42005B6330 /* db.sqlite3 */; };
+		BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */; };
+		C7CC3D753D88E3BB69886542 /* Pods_Vocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0137F11846E23771D08DD133 /* Pods-VocabularyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocabularyDemo.release.xcconfig"; path = "Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo.release.xcconfig"; sourceTree = "<group>"; };
+		23B1BC0594E446FDDA6BBE49 /* Pods-Vocabulary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vocabulary.debug.xcconfig"; path = "Target Support Files/Pods-Vocabulary/Pods-Vocabulary.debug.xcconfig"; sourceTree = "<group>"; };
+		5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocabularyDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AEFDFB262B3E78005B6330 /* VocabularyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabularyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AEFDFE262B3E78005B6330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65AEFE02262B3E78005B6330 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,8 +58,10 @@
 		65AEFE24262B4E09005B6330 /* Vocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Vocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AEFE26262B4E09005B6330 /* Vocabulary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vocabulary.h; sourceTree = "<group>"; };
 		65AEFE27262B4E09005B6330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65AEFE31262B4E17005B6330 /* WordDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
-		65AEFE35262B5361005B6330 /* KaoYan_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = KaoYan_1.json; sourceTree = "<group>"; };
+		65AEFE37262CEB42005B6330 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = SOURCE_ROOT; };
+		AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocabularyDemo.debug.xcconfig"; path = "Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vocabulary.release.xcconfig"; path = "Target Support Files/Pods-Vocabulary/Pods-Vocabulary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65AEFE2B262B4E0A005B6330 /* Vocabulary.framework in Frameworks */,
+				BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CC3D753D88E3BB69886542 /* Pods_Vocabulary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,8 @@
 				65AEFDFD262B3E78005B6330 /* VocabularyDemo */,
 				65AEFE25262B4E09005B6330 /* Vocabulary */,
 				65AEFDFC262B3E78005B6330 /* Products */,
+				EC51E81DC1AB6414760C7CCA /* Pods */,
+				8C3F40660837D401F944D41C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,12 +121,31 @@
 		65AEFE25262B4E09005B6330 /* Vocabulary */ = {
 			isa = PBXGroup;
 			children = (
+				65AEFE37262CEB42005B6330 /* db.sqlite3 */,
 				65AEFE26262B4E09005B6330 /* Vocabulary.h */,
-				65AEFE31262B4E17005B6330 /* WordDefinition.swift */,
-				65AEFE35262B5361005B6330 /* KaoYan_1.json */,
 				65AEFE27262B4E09005B6330 /* Info.plist */,
 			);
 			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		8C3F40660837D401F944D41C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */,
+				5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC51E81DC1AB6414760C7CCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				23B1BC0594E446FDDA6BBE49 /* Pods-Vocabulary.debug.xcconfig */,
+				C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */,
+				AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */,
+				0137F11846E23771D08DD133 /* Pods-VocabularyDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,10 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65AEFE0F262B3E7A005B6330 /* Build configuration list for PBXNativeTarget "VocabularyDemo" */;
 			buildPhases = (
+				65D902926F4316DE6E1AD960 /* [CP] Check Pods Manifest.lock */,
 				65AEFDF7262B3E78005B6330 /* Sources */,
 				65AEFDF8262B3E78005B6330 /* Frameworks */,
 				65AEFDF9262B3E78005B6330 /* Resources */,
 				65AEFE30262B4E0A005B6330 /* Embed Frameworks */,
+				34D44C35962A6FEC60A98B3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65AEFE2D262B4E0A005B6330 /* Build configuration list for PBXNativeTarget "Vocabulary" */;
 			buildPhases = (
+				DA5D116DA9F3CEFABF76397D /* [CP] Check Pods Manifest.lock */,
 				65AEFE1F262B4E09005B6330 /* Headers */,
 				65AEFE20262B4E09005B6330 /* Sources */,
 				65AEFE21262B4E09005B6330 /* Frameworks */,
@@ -223,11 +255,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AEFE36262B5361005B6330 /* KaoYan_1.json in Resources */,
+				65AEFE38262CEB42005B6330 /* db.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34D44C35962A6FEC60A98B3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65D902926F4316DE6E1AD960 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VocabularyDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5D116DA9F3CEFABF76397D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Vocabulary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65AEFDF7262B3E78005B6330 /* Sources */ = {
@@ -243,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65AEFE32262B4E17005B6330 /* WordDefinition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +488,8 @@
 		};
 		65AEFE10262B3E7A005B6330 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VocabularyDemo/Info.plist;
@@ -411,8 +506,8 @@
 		};
 		65AEFE11262B3E7A005B6330 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0137F11846E23771D08DD133 /* Pods-VocabularyDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VocabularyDemo/Info.plist;
@@ -429,6 +524,7 @@
 		};
 		65AEFE2E262B4E0A005B6330 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23B1BC0594E446FDDA6BBE49 /* Pods-Vocabulary.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +553,7 @@
 		};
 		65AEFE2F262B4E0A005B6330 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,75 +8,52 @@
 
 import UIKit
 import Vocabulary
+import SQLite
 
 class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
 
-    var vocabulary: [String: WordDefinition] = [:]
+    var connection: Connection?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        prepareVocabulary()
+        connection = connectDatabase()
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
-        guard let text = textField.text, text.count > 0 else { return }
-
-        textView.text = consultWord(text)?.content?.word?.content?.sentence?.sentences?.first?.sContent
+        if let text = textField.text, text.count > 0 {
+            textView.text = consultWord(text)
+        }
     }
 }
 
-extension ViewController {
-    func consultWord(_ word: String) -> WordDefinition? {
-        return vocabulary[word]
-    }
-
-    func prepareVocabulary() {
-        guard let url = getJSONURL("KaoYan_1") else { return }
-        vocabulary.removeAll()
-
-        let jsonStrings = getJSONStrings(url)
-
-        jsonStrings.forEach { jsonString in
-            if let wordDefinition = jsonStringToWordObject(jsonString) {
-                if let word = wordDefinition.headWord {
-                    vocabulary[word] = wordDefinition
-                }
-            }
+private extension ViewController {
+    func connectDatabase() -> Connection? {
+        guard let path = Bundle(identifier: "z1joey.Vocabulary")?.url(forResource: "db", withExtension: "sqlite3")?.absoluteString else {
+            print("path is nil.")
+            return nil
         }
-
-        print("Vocabulary is prepared: \(vocabulary.count > 0)")
-    }
-
-    func getJSONURL(_ name: String) -> URL? {
-        return Bundle(identifier: "z1joey.Vocabulary")?.url(forResource: name, withExtension: "json")
-    }
-
-    func getJSONStrings(_ url: URL) -> [String] {
+        
         do {
-            let contents = try String(contentsOf: url)
-            let seperatedStrings = contents.components(separatedBy: "{\"wordRank\":").dropFirst()
-            let jsonStrings = seperatedStrings.map { "{\"wordRank\":" + $0 }
-
-            return jsonStrings
-        } catch {
-            print(error.localizedDescription)
-            return []
-        }
-    }
-
-    func jsonStringToWordObject(_ jsonString: String) -> WordDefinition? {
-        guard let data = jsonString.data(using: .utf8) else { return nil }
-
-        do {
-            let word = try JSONDecoder().decode(WordDefinition.self, from: data)
-            return word
+            return try Connection(path, readonly: true)
         } catch {
             print(error)
             return nil
         }
     }
-}
 
+    func consultWord(_ word: String) -> String? {
+        let ecdict = Table("ecdict")
+        let wordExpression = Expression<String?>("word")
+        let result = ecdict.filter(wordExpression == word)
+
+        do {
+            let word = try connection?.pluck(result)
+            return try word?.get(Expression<String>("translation"))
+        } catch {
+            return error.localizedDescription
+        }
+    }
+}

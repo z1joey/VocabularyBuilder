@@ -14,6 +14,6 @@ target 'VocabularyDemo' do
   use_frameworks!
 
   # Pods for VocabularyDemo
-  pod 'RealmSwift'
+  pod 'SQLite.swift', '~> 0.12.0'
 
 end
