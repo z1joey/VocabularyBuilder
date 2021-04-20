@@ -17,14 +17,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         Vocabulary.shared.connectDatabase { success in
-            print("database connected: \(success)")
+            print("isDatabaseConnected: \(success)")
         }
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
         if let text = textField.text, text.count > 0 {
-            Vocabulary.shared.consultWord(text) { word in
-                self.textView.text = word?.translation
+//            Vocabulary.shared.consultWord(text) { word in
+//                self.textView.text = word?.translation
+//            }
+            var res: String = ""
+            Vocabulary.shared.searchWord(text) { words in
+                words.compactMap { $0.word }.forEach { word in
+                    res += word + "\n"
+                }
+                self.textView.text = res
             }
         }
     }

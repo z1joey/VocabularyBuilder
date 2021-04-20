@@ -60,6 +60,33 @@ final public class Vocabulary {
         }
     }
 
+    public func searchWord(_ word: String, completion: @escaping ([WordObject]) -> Void) {
+        guard let db = db else { return }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            let ecdict = Table("ecdict")
+            let wordExpression = Expression<String?>("word")
+            let result = ecdict.filter(wordExpression.like("%\(word)%"))
+
+            do {
+                let rows = try db.prepare(result)
+                let objects: [WordObject] = try rows.map { row in
+                    return try row.decode()
+                }
+                DispatchQueue.main.async {
+                    completion(objects)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+
     @available(*, deprecated, message: "Decoding all data is not a good way")
     public func loadAllWordObjects(_ db: Connection, completion: @escaping ([WordObject]) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
