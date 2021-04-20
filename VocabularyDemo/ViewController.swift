@@ -8,10 +8,13 @@
 
 import UIKit
 import Vocabulary
+import SpeechManager
 
 class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textView: UITextView!
+
+    var speechManager: SpeechManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,20 +22,36 @@ class ViewController: UIViewController {
         Vocabulary.shared.connectDatabase { success in
             print("isDatabaseConnected: \(success)")
         }
+
+        speechManager = SpeechManager()
+        speechManager.requestAuthorization { success in
+            print("isSpeechManagerAuthorized: \(success)")
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 61, repeats: true) { t in
+            print("restart")
+            self.speechManager.recognizeLastWord { [weak self] speechWord in
+                if let word = speechWord?.word {
+                    self?.textField.text = word
+                    self?.searchWord(word)
+                }
+            }
+        }.fire()
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
         if let text = textField.text, text.count > 0 {
-//            Vocabulary.shared.consultWord(text) { word in
-//                self.textView.text = word?.translation
-//            }
-            var res: String = ""
-            Vocabulary.shared.searchWord(text) { words in
-                words.compactMap { $0.word }.forEach { word in
-                    res += word + "\n"
-                }
-                self.textView.text = res
+            searchWord(text)
+        }
+    }
+
+    private func searchWord(_ word: String) {
+        var res: String = ""
+        Vocabulary.shared.searchWord(word) { words in
+            words.compactMap { $0.word }.forEach { word in
+                res += word + "\n"
             }
+            self.textView.text = res
         }
     }
 }

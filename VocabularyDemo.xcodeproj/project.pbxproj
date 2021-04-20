@@ -18,6 +18,9 @@
 		65AEFE38262CEB42005B6330 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 65AEFE37262CEB42005B6330 /* db.sqlite3 */; };
 		65AEFE3D262DCB0E005B6330 /* WordObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE3B262DB4F8005B6330 /* WordObject.swift */; };
 		65AEFE3F262DCB20005B6330 /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE3E262DCB20005B6330 /* Vocabulary.swift */; };
+		65AEFE47262F1B04005B6330 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE46262F1B04005B6330 /* SpeechManager.swift */; };
+		65AEFE4B262F1C46005B6330 /* libSpeechManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AEFE44262F1B04005B6330 /* libSpeechManager.a */; };
+		65AEFE4F262F21AD005B6330 /* SpeechWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE4E262F21AD005B6330 /* SpeechWord.swift */; };
 		BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */; };
 		C7CC3D753D88E3BB69886542 /* Pods_Vocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +32,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 65AEFE23262B4E09005B6330;
 			remoteInfo = Vocabulary;
+		};
+		65AEFE4C262F1C46005B6330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65AEFDF3262B3E78005B6330 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65AEFE43262F1B04005B6330;
+			remoteInfo = SpeechManager;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,6 +52,15 @@
 				65AEFE2C262B4E0A005B6330 /* Vocabulary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65AEFE42262F1B04005B6330 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -63,6 +82,9 @@
 		65AEFE37262CEB42005B6330 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = SOURCE_ROOT; };
 		65AEFE3B262DB4F8005B6330 /* WordObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordObject.swift; sourceTree = "<group>"; };
 		65AEFE3E262DCB20005B6330 /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		65AEFE44262F1B04005B6330 /* libSpeechManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpeechManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AEFE46262F1B04005B6330 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
+		65AEFE4E262F21AD005B6330 /* SpeechWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechWord.swift; sourceTree = "<group>"; };
 		AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocabularyDemo.debug.xcconfig"; path = "Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vocabulary.release.xcconfig"; path = "Target Support Files/Pods-Vocabulary/Pods-Vocabulary.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65AEFE2B262B4E0A005B6330 /* Vocabulary.framework in Frameworks */,
+				65AEFE4B262F1C46005B6330 /* libSpeechManager.a in Frameworks */,
 				BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +109,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65AEFE41262F1B04005B6330 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +124,7 @@
 			children = (
 				65AEFDFD262B3E78005B6330 /* VocabularyDemo */,
 				65AEFE25262B4E09005B6330 /* Vocabulary */,
+				65AEFE45262F1B04005B6330 /* SpeechManager */,
 				65AEFDFC262B3E78005B6330 /* Products */,
 				EC51E81DC1AB6414760C7CCA /* Pods */,
 				8C3F40660837D401F944D41C /* Frameworks */,
@@ -105,6 +136,7 @@
 			children = (
 				65AEFDFB262B3E78005B6330 /* VocabularyDemo.app */,
 				65AEFE24262B4E09005B6330 /* Vocabulary.framework */,
+				65AEFE44262F1B04005B6330 /* libSpeechManager.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +164,15 @@
 				65AEFE27262B4E09005B6330 /* Info.plist */,
 			);
 			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		65AEFE45262F1B04005B6330 /* SpeechManager */ = {
+			isa = PBXGroup;
+			children = (
+				65AEFE46262F1B04005B6330 /* SpeechManager.swift */,
+				65AEFE4E262F21AD005B6330 /* SpeechWord.swift */,
+			);
+			path = SpeechManager;
 			sourceTree = "<group>";
 		};
 		8C3F40660837D401F944D41C /* Frameworks */ = {
@@ -183,6 +224,7 @@
 			);
 			dependencies = (
 				65AEFE2A262B4E09005B6330 /* PBXTargetDependency */,
+				65AEFE4D262F1C46005B6330 /* PBXTargetDependency */,
 			);
 			name = VocabularyDemo;
 			productName = VocabularyDemo;
@@ -208,6 +250,23 @@
 			productReference = 65AEFE24262B4E09005B6330 /* Vocabulary.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		65AEFE43262F1B04005B6330 /* SpeechManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65AEFE48262F1B04005B6330 /* Build configuration list for PBXNativeTarget "SpeechManager" */;
+			buildPhases = (
+				65AEFE40262F1B04005B6330 /* Sources */,
+				65AEFE41262F1B04005B6330 /* Frameworks */,
+				65AEFE42262F1B04005B6330 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpeechManager;
+			productName = SpeechManager;
+			productReference = 65AEFE44262F1B04005B6330 /* libSpeechManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,6 +283,9 @@
 					65AEFE23262B4E09005B6330 = {
 						CreatedOnToolsVersion = 11.7;
 						LastSwiftMigration = 1170;
+					};
+					65AEFE43262F1B04005B6330 = {
+						CreatedOnToolsVersion = 11.7;
 					};
 				};
 			};
@@ -242,6 +304,7 @@
 			targets = (
 				65AEFDFA262B3E78005B6330 /* VocabularyDemo */,
 				65AEFE23262B4E09005B6330 /* Vocabulary */,
+				65AEFE43262F1B04005B6330 /* SpeechManager */,
 			);
 		};
 /* End PBXProject section */
@@ -350,6 +413,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65AEFE40262F1B04005B6330 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65AEFE47262F1B04005B6330 /* SpeechManager.swift in Sources */,
+				65AEFE4F262F21AD005B6330 /* SpeechWord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -357,6 +429,11 @@
 			isa = PBXTargetDependency;
 			target = 65AEFE23262B4E09005B6330 /* Vocabulary */;
 			targetProxy = 65AEFE29262B4E09005B6330 /* PBXContainerItemProxy */;
+		};
+		65AEFE4D262F1C46005B6330 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65AEFE43262F1B04005B6330 /* SpeechManager */;
+			targetProxy = 65AEFE4C262F1C46005B6330 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -430,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -484,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -591,6 +668,34 @@
 			};
 			name = Release;
 		};
+		65AEFE49262F1B04005B6330 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65AEFE4A262F1B04005B6330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -617,6 +722,15 @@
 			buildConfigurations = (
 				65AEFE2E262B4E0A005B6330 /* Debug */,
 				65AEFE2F262B4E0A005B6330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65AEFE48262F1B04005B6330 /* Build configuration list for PBXNativeTarget "SpeechManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65AEFE49262F1B04005B6330 /* Debug */,
+				65AEFE4A262F1B04005B6330 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
