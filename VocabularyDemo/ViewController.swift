@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     var speechManager: SpeechManager!
 
+    var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,15 +30,27 @@ class ViewController: UIViewController {
             print("isSpeechManagerAuthorized: \(success)")
         }
 
-        Timer.scheduledTimer(withTimeInterval: 61, repeats: true) { t in
-            print("restart")
-            self.speechManager.recognizeLastWord { [weak self] speechWord in
-                if let word = speechWord?.word {
-                    self?.textField.text = word
-                    self?.searchWord(word)
-                }
-            }
-        }.fire()
+        NotificationCenter.default.addObserver(self, selector: #selector(viewControllerWillEnterBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(viewControllerDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc func viewControllerWillEnterBackground()  {
+        speechManager.stopRecording()
+
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    @objc func viewControllerDidBecomeActive()  {
+        startTimer()
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
@@ -53,5 +67,18 @@ class ViewController: UIViewController {
             }
             self.textView.text = res
         }
+    }
+
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 61, repeats: true) { t in
+            print("restart")
+            self.speechManager.recognizeLastWord { [weak self] speechWord in
+                if let word = speechWord?.word {
+                    self?.textField.text = word
+                    self?.searchWord(word)
+                }
+            }
+        }
+        timer?.fire()
     }
 }
