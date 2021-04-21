@@ -60,32 +60,31 @@ final public class Vocabulary {
         }
     }
 
-    public func searchWord(_ word: String, completion: @escaping ([WordObject]) -> Void) {
-        guard let db = db else { return }
-
-        DispatchQueue.global(qos: .userInitiated).async {
-            let ecdict = Table("ecdict")
-            let wordExpression = Expression<String?>("word")
-            let result = ecdict.filter(wordExpression.like("%\(word)%"))
-
-            do {
-                let rows = try db.prepare(result)
-                let objects: [WordObject] = try rows.map { row in
-                    return try row.decode()
-                }
-                DispatchQueue.main.async {
-                    completion(objects)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion([])
-                }
-
-                print(error.localizedDescription)
-            }
-        }
+    public func filterByWord(_ word: String, completion: @escaping ([WordObject]) -> Void) {
+        let ecdict = Table("ecdict")
+        let wordExpression = Expression<String?>("word")
+        let result = ecdict.filter(wordExpression.like("%\(word)%"))
+        pareTableIntoArray(result, completion: completion)
     }
 
+    public func filterByTag(_ tag: WordTag, completion: @escaping ([WordObject]) -> Void) {
+        let ecdict = Table("ecdict")
+
+        switch tag {
+        case .collins:
+            let oxfordExpression = Expression<String?>("collins")
+            let result = ecdict.filter(oxfordExpression == "5")
+            pareTableIntoArray(result, completion: completion)
+        case .oxford:
+            let collinsExpression = Expression<String?>("oxford")
+            let result = ecdict.filter(collinsExpression == "1")
+            pareTableIntoArray(result, completion: completion)
+        default:
+            let tagExpression = Expression<String?>("tag")
+            let result = ecdict.filter(tagExpression.like("%\(tag.rawValue)%"))
+            pareTableIntoArray(result, completion: completion)
+        }
+    }
 
     @available(*, deprecated, message: "Decoding all data is not a good way")
     public func loadAllWordObjects(_ db: Connection, completion: @escaping ([WordObject]) -> Void) {
@@ -103,6 +102,31 @@ final public class Vocabulary {
                 DispatchQueue.main.async {
                     completion([])
                 }
+            }
+        }
+    }
+}
+
+// MARK:- Helpers
+private extension Vocabulary {
+    func pareTableIntoArray(_ table: Table, completion: @escaping ([WordObject]) -> Void) {
+        guard let db = db else { return }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let rows = try db.prepare(table)
+                let objects: [WordObject] = try rows.map { row in
+                    return try row.decode()
+                }
+                DispatchQueue.main.async {
+                    completion(objects)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+
+                print(error.localizedDescription)
             }
         }
     }

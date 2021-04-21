@@ -21,6 +21,7 @@
 		65AEFE47262F1B04005B6330 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE46262F1B04005B6330 /* SpeechManager.swift */; };
 		65AEFE4B262F1C46005B6330 /* libSpeechManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AEFE44262F1B04005B6330 /* libSpeechManager.a */; };
 		65AEFE4F262F21AD005B6330 /* SpeechWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE4E262F21AD005B6330 /* SpeechWord.swift */; };
+		65AEFE5126306B10005B6330 /* WordTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE5026306B10005B6330 /* WordTag.swift */; };
 		BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */; };
 		C7CC3D753D88E3BB69886542 /* Pods_Vocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		65AEFE44262F1B04005B6330 /* libSpeechManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpeechManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AEFE46262F1B04005B6330 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 		65AEFE4E262F21AD005B6330 /* SpeechWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechWord.swift; sourceTree = "<group>"; };
+		65AEFE5026306B10005B6330 /* WordTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTag.swift; sourceTree = "<group>"; };
 		AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocabularyDemo.debug.xcconfig"; path = "Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vocabulary.release.xcconfig"; path = "Target Support Files/Pods-Vocabulary/Pods-Vocabulary.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 			children = (
 				65AEFE37262CEB42005B6330 /* db.sqlite3 */,
 				65AEFE26262B4E09005B6330 /* Vocabulary.h */,
-				65AEFE3B262DB4F8005B6330 /* WordObject.swift */,
 				65AEFE3E262DCB20005B6330 /* Vocabulary.swift */,
+				65AEFE3B262DB4F8005B6330 /* WordObject.swift */,
+				65AEFE5026306B10005B6330 /* WordTag.swift */,
 				65AEFE27262B4E09005B6330 /* Info.plist */,
 			);
 			path = Vocabulary;
@@ -410,6 +413,7 @@
 			files = (
 				65AEFE3D262DCB0E005B6330 /* WordObject.swift in Sources */,
 				65AEFE3F262DCB20005B6330 /* Vocabulary.swift in Sources */,
+				65AEFE5126306B10005B6330 /* WordTag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

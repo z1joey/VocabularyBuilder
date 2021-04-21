@@ -32,6 +32,8 @@ class ViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(viewControllerWillEnterBackground), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(viewControllerDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+
+        updateTextViewByTag(.gaoKao)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,20 +50,21 @@ class ViewController: UIViewController {
             timer = nil
         }
     }
-    
+
     @objc func viewControllerDidBecomeActive()  {
         startTimer()
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
         if let text = textField.text, text.count > 0 {
-            searchWord(text)
+            updateTextViewByWord(text)
+            view.endEditing(true)
         }
     }
 
-    private func searchWord(_ word: String) {
+    private func updateTextViewByWord(_ word: String) {
         var res: String = ""
-        Vocabulary.shared.searchWord(word) { words in
+        Vocabulary.shared.filterByWord(word) { words in
             words.compactMap { $0.word }.forEach { word in
                 res += word + "\n"
             }
@@ -69,16 +72,26 @@ class ViewController: UIViewController {
         }
     }
 
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 61, repeats: true) { t in
-            print("restart")
-            self.speechManager.recognizeLastWord { [weak self] speechWord in
-                if let word = speechWord?.word {
-                    self?.textField.text = word
-                    self?.searchWord(word)
-                }
+    private func updateTextViewByTag(_ tag: WordTag) {
+        var res: String = ""
+        Vocabulary.shared.filterByTag(.collins) { words in
+            words.compactMap { $0 }.forEach { word in
+                res += "\(word.word): tags\(word.tags.map { $0.displayName }) collins: \(word.stars), oxford: \(word.isOxfordWord)\n"
             }
+            self.textView.text = res
         }
-        timer?.fire()
+    }
+
+    private func startTimer() {
+//        timer = Timer.scheduledTimer(withTimeInterval: 61, repeats: true) { t in
+//            print("restart")
+//            self.speechManager.recognizeLastWord { [weak self] speechWord in
+//                if let word = speechWord?.word {
+//                    self?.textField.text = word
+//                    self?.updateTextViewByWord(word)
+//                }
+//            }
+//        }
+//        timer?.fire()
     }
 }
