@@ -30,7 +30,7 @@ public struct WordObject: Codable {
         }
 
         if stars == 5 {
-            _tags.append(WordTag.collins)
+            _tags.append(WordTag.collins5)
         }
 
         if isOxfordWord {

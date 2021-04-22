@@ -56,10 +56,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchAction(_ sender: UIButton) {
-        if let text = textField.text, text.count > 0 {
-            updateTextViewByWord(text)
-            view.endEditing(true)
-        }
+//        if let text = textField.text, text.count > 0 {
+//            updateTextViewByWord(text)
+//            view.endEditing(true)
+//        }
     }
 
     private func updateTextViewByWord(_ word: String) {
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
 
     private func updateTextViewByTag(_ tag: WordTag) {
         var res: String = ""
-        Vocabulary.shared.filterByTag(.collins) { words in
+        Vocabulary.shared.filterByTag(.collins5) { words in
             words.compactMap { $0 }.forEach { word in
                 res += "\(word.word): tags\(word.tags.map { $0.displayName }) collins: \(word.stars), oxford: \(word.isOxfordWord)\n"
             }

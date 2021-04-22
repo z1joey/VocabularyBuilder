@@ -24,6 +24,9 @@
 		65AEFE5126306B10005B6330 /* WordTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AEFE5026306B10005B6330 /* WordTag.swift */; };
 		BEA6D7C8299D6C20A1E56743 /* Pods_VocabularyDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */; };
 		C7CC3D753D88E3BB69886542 /* Pods_Vocabulary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */; };
+		D40F88FF2631130F0030E60F /* VocabularyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F88FE2631130F0030E60F /* VocabularyBookViewController.swift */; };
+		D40F8903263118080030E60F /* VocabularyBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F8902263118080030E60F /* VocabularyBookCell.swift */; };
+		D40F890B26311F5A0030E60F /* UILayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F890A26311F5A0030E60F /* UILayer+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		AABED5C9BA95C3CE7AD8265A /* Pods-VocabularyDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocabularyDemo.debug.xcconfig"; path = "Target Support Files/Pods-VocabularyDemo/Pods-VocabularyDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C0915ED84BF745E83B5E9113 /* Pods_Vocabulary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vocabulary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E42AE63E27AD57583BAA7C /* Pods-Vocabulary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vocabulary.release.xcconfig"; path = "Target Support Files/Pods-Vocabulary/Pods-Vocabulary.release.xcconfig"; sourceTree = "<group>"; };
+		D40F88FE2631130F0030E60F /* VocabularyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyBookViewController.swift; sourceTree = "<group>"; };
+		D40F8902263118080030E60F /* VocabularyBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyBookCell.swift; sourceTree = "<group>"; };
+		D40F890A26311F5A0030E60F /* UILayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,8 @@
 		65AEFDFD262B3E78005B6330 /* VocabularyDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D40F890926311F350030E60F /* Extension */,
+				D40F890826311F270030E60F /* Book */,
 				65AEFDFE262B3E78005B6330 /* AppDelegate.swift */,
 				65AEFE02262B3E78005B6330 /* ViewController.swift */,
 				65AEFE04262B3E78005B6330 /* Main.storyboard */,
@@ -185,6 +193,23 @@
 				5C5AA35A1BCAE5290B3A6E6A /* Pods_VocabularyDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D40F890826311F270030E60F /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				D40F88FE2631130F0030E60F /* VocabularyBookViewController.swift */,
+				D40F8902263118080030E60F /* VocabularyBookCell.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		D40F890926311F350030E60F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D40F890A26311F5A0030E60F /* UILayer+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		EC51E81DC1AB6414760C7CCA /* Pods */ = {
@@ -402,8 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40F890B26311F5A0030E60F /* UILayer+Extension.swift in Sources */,
 				65AEFE03262B3E78005B6330 /* ViewController.swift in Sources */,
 				65AEFDFF262B3E78005B6330 /* AppDelegate.swift in Sources */,
+				D40F8903263118080030E60F /* VocabularyBookCell.swift in Sources */,
+				D40F88FF2631130F0030E60F /* VocabularyBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

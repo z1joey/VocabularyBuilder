@@ -71,7 +71,7 @@ final public class Vocabulary {
         let ecdict = Table("ecdict")
 
         switch tag {
-        case .collins:
+        case .collins5:
             let oxfordExpression = Expression<String?>("collins")
             let result = ecdict.filter(oxfordExpression == "5")
             pareTableIntoArray(result, completion: completion)

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,24 +28,26 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zah-0n-hdq">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zah-0n-hdq">
                                         <rect key="frame" x="220" y="0.0" width="48" height="34"/>
                                         <state key="normal" title="Search"/>
                                         <connections>
                                             <action selector="searchAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="56n-dZ-1uN"/>
+                                            <segue destination="4xO-BA-AOd" kind="presentation" id="uHh-yR-VGU"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U6e-yL-D80">
                                 <rect key="frame" x="20" y="166" width="374" height="652"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8D8-t1-v6Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="89R-cB-hRH"/>
                             <constraint firstItem="8D8-t1-v6Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Do9-Wd-Dl2"/>
@@ -52,7 +56,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U6e-yL-D80" secondAttribute="bottom" constant="44" id="Wj8-0Q-5lE"/>
                             <constraint firstItem="U6e-yL-D80" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wlo-PA-6t2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="textField" destination="jI5-f3-iu7" id="w8g-s3-dc7"/>
@@ -61,7 +64,171 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="174" y="139"/>
+        </scene>
+        <!--词汇列表-->
+        <scene sceneID="B0j-hW-z2y">
+            <objects>
+                <tableViewController id="COU-S5-smW" customClass="VocabularyBookViewController" customModule="VocabularyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bHf-uE-vT4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="aZd-rT-JbP">
+                            <rect key="frame" x="0.0" y="377" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="321" id="fwV-H6-Tfh" customClass="VocabularyBookCell" customModule="VocabularyDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="321"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fwV-H6-Tfh" id="Zg5-pr-G3C">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="321"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-CP-s8s">
+                                            <rect key="frame" x="20" y="20" width="374" height="281"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FcG-Lp-QpA">
+                                                    <rect key="frame" x="20" y="20" width="176" height="44"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookCover_c" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-Eb-Wx2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="eG2-ga-q2V"/>
+                                                                <constraint firstAttribute="width" constant="44" id="yUk-we-H8L"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DKU-fd-57i">
+                                                            <rect key="frame" x="54" y="0.5" width="122" height="43"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="柯林斯5星词汇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dv-F2-8Dc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="699 / 2911" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECU-Ji-NKz">
+                                                                    <rect key="frame" x="0.0" y="21.5" width="68" height="21.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="fHf-Tr-3vf"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="44k-nV-368">
+                                                    <rect key="frame" x="20" y="74" width="334" height="4"/>
+                                                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                    <color key="tintColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </progressView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRJ-AQ-Bos">
+                                                    <rect key="frame" x="20" y="217" width="334" height="44"/>
+                                                    <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="OWh-Xp-FI8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="开始背单词啦">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSl-Ic-mqg">
+                                                    <rect key="frame" x="20" y="98" width="334" height="99"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="柯林斯从语料库中将单词在日常生活中的使用频率统计出来，按照频率的高低将单词分级，五星的就是日常生活中最常用的，依次类推。">
+                                                            <attributes>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="RSl-Ic-mqg" firstAttribute="top" secondItem="44k-nV-368" secondAttribute="bottom" constant="20" id="9oS-ed-Kf8"/>
+                                                <constraint firstAttribute="trailing" secondItem="44k-nV-368" secondAttribute="trailing" constant="20" id="JVA-Dd-aLP"/>
+                                                <constraint firstItem="44k-nV-368" firstAttribute="leading" secondItem="4ee-CP-s8s" secondAttribute="leading" constant="20" id="KIX-gY-pno"/>
+                                                <constraint firstItem="wRJ-AQ-Bos" firstAttribute="top" secondItem="RSl-Ic-mqg" secondAttribute="bottom" constant="20" id="QAn-vm-Xcq"/>
+                                                <constraint firstItem="FcG-Lp-QpA" firstAttribute="leading" secondItem="4ee-CP-s8s" secondAttribute="leading" constant="20" id="TcV-TR-DKe"/>
+                                                <constraint firstAttribute="trailing" secondItem="wRJ-AQ-Bos" secondAttribute="trailing" constant="20" id="c67-7Q-OzW"/>
+                                                <constraint firstItem="wRJ-AQ-Bos" firstAttribute="leading" secondItem="4ee-CP-s8s" secondAttribute="leading" constant="20" id="hty-Tz-0wZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="RSl-Ic-mqg" secondAttribute="trailing" constant="20" id="nFd-kI-rw7"/>
+                                                <constraint firstAttribute="bottom" secondItem="wRJ-AQ-Bos" secondAttribute="bottom" constant="20" id="o8B-yt-RLI"/>
+                                                <constraint firstItem="FcG-Lp-QpA" firstAttribute="top" secondItem="4ee-CP-s8s" secondAttribute="top" constant="20" id="r0N-JO-ZTf"/>
+                                                <constraint firstItem="44k-nV-368" firstAttribute="top" secondItem="FcG-Lp-QpA" secondAttribute="bottom" constant="10" id="tC1-E6-bPx"/>
+                                                <constraint firstItem="RSl-Ic-mqg" firstAttribute="leading" secondItem="4ee-CP-s8s" secondAttribute="leading" constant="20" id="wSw-Hh-cTd"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="4ee-CP-s8s" secondAttribute="bottom" constant="20" id="2cW-ue-XGD"/>
+                                        <constraint firstAttribute="trailing" secondItem="4ee-CP-s8s" secondAttribute="trailing" constant="20" id="4J7-dg-qXU"/>
+                                        <constraint firstItem="4ee-CP-s8s" firstAttribute="leading" secondItem="Zg5-pr-G3C" secondAttribute="leading" constant="20" id="NeR-HH-IvS"/>
+                                        <constraint firstItem="4ee-CP-s8s" firstAttribute="top" secondItem="Zg5-pr-G3C" secondAttribute="top" constant="20" id="a59-jV-kFZ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="bookImageView" destination="2y8-Eb-Wx2" id="YNe-yh-YXJ"/>
+                                    <outlet property="bookNameLabel" destination="6Dv-F2-8Dc" id="svb-Zi-lyh"/>
+                                    <outlet property="bottomView" destination="4ee-CP-s8s" id="EaR-mZ-e4j"/>
+                                    <outlet property="completionProgressView" destination="44k-nV-368" id="get-dx-WT3"/>
+                                    <outlet property="descriptionLabel" destination="RSl-Ic-mqg" id="7VZ-ox-kuQ"/>
+                                    <outlet property="vocabularyCountLabel" destination="ECU-Ji-NKz" id="P16-yV-yVa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="COU-S5-smW" id="dJq-UK-Iqc"/>
+                            <outlet property="delegate" destination="COU-S5-smW" id="KO8-9q-mn2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="词汇列表" id="5IE-R8-1XQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QC1-qT-2cZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XCv-3n-KI1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4xO-BA-AOd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xFA-7k-iKO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="COU-S5-smW" kind="relationship" relationship="rootViewController" id="Lhr-wm-ZAo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbK-45-sem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookCover_c" width="96" height="96"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
