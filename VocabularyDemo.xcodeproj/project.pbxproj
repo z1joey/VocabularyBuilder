@@ -27,6 +27,9 @@
 		D40F88FF2631130F0030E60F /* VocabularyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F88FE2631130F0030E60F /* VocabularyBookViewController.swift */; };
 		D40F8903263118080030E60F /* VocabularyBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F8902263118080030E60F /* VocabularyBookCell.swift */; };
 		D40F890B26311F5A0030E60F /* UILayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F890A26311F5A0030E60F /* UILayer+Extension.swift */; };
+		D4E5E3FA263A4BE6008A2DC5 /* DictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4E5E3F9263A4BE6008A2DC5 /* DictViewController.xib */; };
+		D4E5E3FE263A52D7008A2DC5 /* DictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5E3FD263A52D7008A2DC5 /* DictViewController.swift */; };
+		D4E5E408263A5CAB008A2DC5 /* DictViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5E407263A5CAB008A2DC5 /* DictViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,9 @@
 		D40F88FE2631130F0030E60F /* VocabularyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyBookViewController.swift; sourceTree = "<group>"; };
 		D40F8902263118080030E60F /* VocabularyBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyBookCell.swift; sourceTree = "<group>"; };
 		D40F890A26311F5A0030E60F /* UILayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayer+Extension.swift"; sourceTree = "<group>"; };
+		D4E5E3F9263A4BE6008A2DC5 /* DictViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictViewController.xib; sourceTree = "<group>"; };
+		D4E5E3FD263A52D7008A2DC5 /* DictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewController.swift; sourceTree = "<group>"; };
+		D4E5E407263A5CAB008A2DC5 /* DictViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				D40F890926311F350030E60F /* Extension */,
+				D4E5E3F6263A4966008A2DC5 /* Dict */,
 				D40F890826311F270030E60F /* Book */,
 				65AEFDFE262B3E78005B6330 /* AppDelegate.swift */,
 				65AEFE02262B3E78005B6330 /* ViewController.swift */,
@@ -210,6 +217,32 @@
 				D40F890A26311F5A0030E60F /* UILayer+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D4E5E3F6263A4966008A2DC5 /* Dict */ = {
+			isa = PBXGroup;
+			children = (
+				D4E5E404263A5608008A2DC5 /* ViewModel */,
+				D4E5E401263A52DD008A2DC5 /* Controller */,
+			);
+			path = Dict;
+			sourceTree = "<group>";
+		};
+		D4E5E401263A52DD008A2DC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D4E5E3F9263A4BE6008A2DC5 /* DictViewController.xib */,
+				D4E5E3FD263A52D7008A2DC5 /* DictViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D4E5E404263A5608008A2DC5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4E5E407263A5CAB008A2DC5 /* DictViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EC51E81DC1AB6414760C7CCA /* Pods */ = {
@@ -344,6 +377,7 @@
 			files = (
 				65AEFE0B262B3E7A005B6330 /* LaunchScreen.storyboard in Resources */,
 				65AEFE08262B3E7A005B6330 /* Assets.xcassets in Resources */,
+				D4E5E3FA263A4BE6008A2DC5 /* DictViewController.xib in Resources */,
 				65AEFE06262B3E78005B6330 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,8 +463,10 @@
 			files = (
 				D40F890B26311F5A0030E60F /* UILayer+Extension.swift in Sources */,
 				65AEFE03262B3E78005B6330 /* ViewController.swift in Sources */,
+				D4E5E408263A5CAB008A2DC5 /* DictViewModel.swift in Sources */,
 				65AEFDFF262B3E78005B6330 /* AppDelegate.swift in Sources */,
 				D40F8903263118080030E60F /* VocabularyBookCell.swift in Sources */,
+				D4E5E3FE263A52D7008A2DC5 /* DictViewController.swift in Sources */,
 				D40F88FF2631130F0030E60F /* VocabularyBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

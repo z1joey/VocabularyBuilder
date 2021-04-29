@@ -7,7 +7,8 @@ target 'Vocabulary' do
 
   # Pods for Vocabulary
   pod 'SQLite.swift', '~> 0.12.0'
-
+  pod 'RxSwift', '6.1.0'
+  pod 'RxCocoa', '6.1.0'
 end
 
 target 'VocabularyDemo' do
